@@ -1,4 +1,4 @@
-# Claude JSONL History Viewer
+# Dark Theme Version of Claude JSONL History Viewer
 
 A single-file web application for browsing Claude Code conversation histories. This application provides a visual interface for exploring Claude AI conversations, including user messages, assistant responses, tool calls, and metadata.
 
