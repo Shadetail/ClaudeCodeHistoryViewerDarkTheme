@@ -14,7 +14,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f9fafb;
+            background-color: #111827;
             min-height: 100vh;
             padding: 1rem;
         }
@@ -50,20 +50,20 @@
             <div class="claude-app-container flex flex-col lg:flex-row gap-6">
                 <!-- Left Panel -->
                 <div class="claude-left-panel lg:w-2/5 flex flex-col gap-4">
-                    <div class="bg-white rounded-xl shadow-md p-4">
+                    <div class="bg-gray-800 rounded-xl shadow-md p-4">
                         <div class="flex justify-between items-center mb-3">
-                            <h2 class="text-lg font-semibold text-gray-800 flex items-center">
+                            <h2 class="text-lg font-semibold text-gray-100 flex items-center">
                                 <span class="text-blue-500 mr-2">📁</span>
                                 <span id="projectFolderTitle">${this.languageManager.get('projectFolder')}</span>
                             </h2>
-                            <button id="languageToggle" class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-3 py-2 rounded text-sm transition-colors border-0 flex items-center">
+                            <button id="languageToggle" class="bg-gray-700 hover:bg-gray-600 text-gray-200 px-3 py-2 rounded text-sm transition-colors border-0 flex items-center">
                                 <span class="mr-1">🌐</span>
                                 <span id="languageToggleText">${this.languageManager.getCurrentLanguage() === 'zh-CN' ? '中文' : 'English'}</span>
                             </button>
                         </div>
                         <div class="flex mb-3">
                             <input type="text" id="folderPath" placeholder="${this.languageManager.get('selectFolderPlaceholder')}" readonly
-                                class="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-l-lg bg-gray-50">
+                                class="flex-1 px-3 py-2 text-sm border border-gray-600 rounded-l-lg bg-gray-700 text-gray-200">
                             <button id="browseBtn"
                                 class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded-r-lg transition-colors text-sm border-0">
                                 <span class="mr-1">📁</span>
@@ -74,28 +74,28 @@
                         <!-- Option buttons -->
                         <div class="flex space-x-2">
                             <button id="refreshBtn"
-                                class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 px-3 py-2 rounded text-sm transition-colors border-0">
+                                class="flex-1 bg-gray-700 hover:bg-gray-600 text-gray-200 px-3 py-2 rounded text-sm transition-colors border-0">
                                 <span class="mr-1">🔄</span>
                                 <span id="refreshBtnText">${this.languageManager.get('refreshButton')}</span>
                             </button>
                             <button id="expandAllBtn"
-                                class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 px-3 py-2 rounded text-sm transition-colors border-0">
+                                class="flex-1 bg-gray-700 hover:bg-gray-600 text-gray-200 px-3 py-2 rounded text-sm transition-colors border-0">
                                 <span class="mr-1">⬇️</span>
                                 <span id="expandAllBtnText">${this.languageManager.get('expandAllButton')}</span>
                             </button>
                             <button id="collapseAllBtn"
-                                class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-800 px-3 py-2 rounded text-sm transition-colors border-0">
+                                class="flex-1 bg-gray-700 hover:bg-gray-600 text-gray-200 px-3 py-2 rounded text-sm transition-colors border-0">
                                 <span class="mr-1">⬆️</span>
                                 <span id="collapseAllBtnText">${this.languageManager.get('collapseAllButton')}</span>
                             </button>
                             <button id="resetBtn"
-                                class="flex-1 bg-red-100 hover:bg-red-200 text-red-800 px-3 py-2 rounded text-sm transition-colors border-0">
+                                class="flex-1 bg-red-900 hover:bg-red-800 text-red-200 px-3 py-2 rounded text-sm transition-colors border-0">
                                 <span class="mr-1">↩️</span>
                                 <span id="resetBtnText">${this.languageManager.get('resetButton')}</span>
                             </button>
                         </div>
 
-                        <div class="mt-2 text-xs text-gray-500">
+                        <div class="mt-2 text-xs text-gray-400">
                             <p><span class="mr-1">ℹ️</span>${this.languageManager.get('browserSupportInfo')}</p>
                         </div>
                     </div>
@@ -468,6 +468,9 @@
 
                 /* Colors - Text */
                 .text-white { color: white; }
+                .text-gray-100 { color: #f3f4f6; }
+                .text-gray-200 { color: #e5e7eb; }
+                .text-gray-300 { color: #d1d5db; }
                 .text-gray-400 { color: #9ca3af; }
                 .text-gray-500 { color: #6b7280; }
                 .text-gray-600 { color: #4b5563; }
@@ -501,10 +504,13 @@
 
                 /* Colors - Background */
                 .bg-white { background-color: white; }
-                .bg-gray-50 { background-color: #f9fafb; }
-                .bg-gray-100 { background-color: #f3f4f6; }
+                .bg-gray-700 { background-color: #f9fafb; }
+                .bg-gray-700 { background-color: #f3f4f6; }
                 .bg-gray-200 { background-color: #e5e7eb; }
+                .bg-gray-600 { background-color: #4b5563; }
+                .bg-gray-700 { background-color: #374151; }
                 .bg-gray-800 { background-color: #1f2937; }
+                .bg-gray-900 { background-color: #111827; }
                 .bg-blue-50 { background-color: #eff6ff; }
                 .bg-blue-100 { background-color: #dbeafe; }
                 .bg-blue-500 { background-color: #3b82f6; }
@@ -554,7 +560,7 @@
 
                 /* Button borders - removed */
                 .border-transparent { border-color: transparent; }
-                .border-gray-200 { border-color: #e5e7eb; }
+                .border-gray-600 { border-color: #e5e7eb; }
                 .border-gray-300 { border-color: #d1d5db; }
                 .border-blue-300 { border-color: #93c5fd; }
                 .border-blue-500 { border-color: #3b82f6; }
@@ -618,9 +624,12 @@
                 .hover\\:bg-blue-600:hover { background-color: #2563eb; }
                 .hover\\:bg-green-600:hover { background-color: #059669; }
                 .hover\\:bg-red-600:hover { background-color: #dc2626; }
-                .hover\\:bg-gray-50:hover { background-color: #f9fafb; }
-                .hover\\:bg-gray-100:hover { background-color: #f3f4f6; }
+                .hover\\:bg-gray-700:hover { background-color: #f9fafb; }
+                .hover\\:bg-gray-700:hover { background-color: #f3f4f6; }
                 .hover\\:bg-gray-200:hover { background-color: #e5e7eb; }
+                .hover\\:bg-gray-600:hover { background-color: #4b5563; }
+                .hover\\:bg-gray-700:hover { background-color: #374151; }
+                .hover\\:bg-gray-800:hover { background-color: #1f2937; }
                 .hover\\:border-gray-300:hover { border-color: #d1d5db; }
                 .hover\\:border-blue-300:hover { border-color: #93c5fd; }
                 .hover\\:text-gray-900:hover { color: #111827; }
@@ -674,8 +683,8 @@
 
             .claude-right-panel {
                 height: 100%;
-                overflow-y: auto; 
-                scrollbar-color: #cbd5e1 #f8fafc;
+                overflow-y: auto;
+                scrollbar-color: #4b5563 #1f2937;
             }
 
             .claude-right-panel::-webkit-scrollbar {
@@ -683,17 +692,17 @@
             }
 
             .claude-right-panel::-webkit-scrollbar-track {
-                background: #f8fafc;
+                background: #1f2937;
                 border-radius: 4px;
             }
 
             .claude-right-panel::-webkit-scrollbar-thumb {
-                background: #cbd5e1;
+                background: #4b5563;
                 border-radius: 4px;
             }
 
             .claude-right-panel::-webkit-scrollbar-thumb:hover {
-                background: #94a3b8;
+                background: #6b7280;
             }
 
             /* Ensure message viewer has proper height */
@@ -719,8 +728,8 @@
             .claude-file-tree {
                 overflow-y: auto;
                 max-height: calc(100vh - 380px);
-                min-height: 200px; 
-                scrollbar-color: #cbd5e1 #f8fafc;
+                min-height: 200px;
+                scrollbar-color: #4b5563 #1f2937;
             }
 
             .claude-file-tree::-webkit-scrollbar {
@@ -728,17 +737,17 @@
             }
 
             .claude-file-tree::-webkit-scrollbar-track {
-                background: #f8fafc;
+                background: #1f2937;
                 border-radius: 4px;
             }
 
             .claude-file-tree::-webkit-scrollbar-thumb {
-                background: #cbd5e1;
+                background: #4b5563;
                 border-radius: 4px;
             }
 
             .claude-file-tree::-webkit-scrollbar-thumb:hover {
-                background: #94a3b8;
+                background: #6b7280;
             }
 
             .claude-tree-node {
@@ -762,7 +771,7 @@
             }
 
             .claude-tree-toggle:hover {
-                background-color: #e5e7eb;
+                background-color: #4b5563;
             }
 
             .claude-file-item {
@@ -770,12 +779,17 @@
             }
 
             .claude-file-item:hover {
-                background-color: #f9fafb;
+                background-color: #374151;
             }
 
             .claude-active-file {
-                background-color: #eff6ff;
+                background-color: #1e3a5f;
                 border-color: #3b82f6;
+                color: #e5e7eb !important;
+            }
+
+            .claude-active-file * {
+                color: #e5e7eb !important;
             }
 
             .claude-file-preview {
@@ -817,7 +831,7 @@
             generateMessageViewerStyles() {
                 return `
             .message-user {
-                background-color: #f3f4f6;
+                background-color: #1f2937;
                 border-left: 4px solid #3b82f6;
                 max-height: 400px;
                 overflow-y: auto;
@@ -825,7 +839,7 @@
             }
 
             .message-assistant {
-                background-color: #f0f9ff;
+                background-color: #1e3a3a;
                 border-left: 4px solid #10b981;
                 max-height: 400px;
                 overflow-y: auto;
@@ -833,7 +847,7 @@
             }
 
             .message-system {
-                background-color: #fef3c7;
+                background-color: #3a2e1e;
                 border-left: 4px solid #f59e0b;
                 max-height: 400px;
                 overflow-y: auto;
@@ -841,7 +855,7 @@
             }
 
             .message-summary {
-                background-color: #fefce8;
+                background-color: #3a341e;
                 border-left: 4px solid #eab308;
                 max-height: 400px;
                 overflow-y: auto;
@@ -849,7 +863,7 @@
             }
 
             .message-tool {
-                background-color: #f5f3ff;
+                background-color: #2d2640;
                 border-left: 4px solid #8b5cf6;
                 max-height: 400px;
                 overflow-y: auto;
@@ -902,8 +916,8 @@
             }
 
             .tool-call {
-                background-color: #f8fafc;
-                border: 1px solid #e2e8f0;
+                background-color: #1f2937;
+                border: 1px solid #374151;
                 border-radius: 0.375rem;
                 padding: 0.75rem;
                 margin-top: 0.5rem;
@@ -911,12 +925,12 @@
 
             .tool-name {
                 font-weight: 600;
-                color: #7c3aed;
+                color: #a78bfa;
                 margin-bottom: 0.25rem;
             }
 
             .tool-description {
-                color: #4b5563;
+                color: #9ca3af;
                 font-size: 0.875rem;
             }
 
@@ -938,7 +952,7 @@
             .scroll-container {
                 overflow-y: auto;
                 scrollbar-width: thin;
-                scrollbar-color: #cbd5e1 #f8fafc;
+                scrollbar-color: #4b5563 #1f2937;
             }
 
             .scroll-container::-webkit-scrollbar {
@@ -946,17 +960,17 @@
             }
 
             .scroll-container::-webkit-scrollbar-track {
-                background: #f8fafc;
+                background: #1f2937;
                 border-radius: 4px;
             }
 
             .scroll-container::-webkit-scrollbar-thumb {
-                background: #cbd5e1;
+                background: #4b5563;
                 border-radius: 4px;
             }
 
             .scroll-container::-webkit-scrollbar-thumb:hover {
-                background: #94a3b8;
+                background: #6b7280;
             }
 
             /* Message content scrollbar styling */
@@ -971,7 +985,7 @@
             .message-assistant::-webkit-scrollbar-track,
             .message-system::-webkit-scrollbar-track,
             .message-summary::-webkit-scrollbar-track {
-                background: rgba(0, 0, 0, 0.05);
+                background: rgba(255, 255, 255, 0.05);
                 border-radius: 3px;
             }
 
@@ -979,7 +993,7 @@
             .message-assistant::-webkit-scrollbar-thumb,
             .message-system::-webkit-scrollbar-thumb,
             .message-summary::-webkit-scrollbar-thumb {
-                background: rgba(0, 0, 0, 0.2);
+                background: rgba(255, 255, 255, 0.2);
                 border-radius: 3px;
             }
 
@@ -987,7 +1001,7 @@
             .message-assistant::-webkit-scrollbar-thumb:hover,
             .message-system::-webkit-scrollbar-thumb:hover,
             .message-summary::-webkit-scrollbar-thumb:hover {
-                background: rgba(0, 0, 0, 0.3);
+                background: rgba(255, 255, 255, 0.3);
             }
         `;
             }
@@ -995,11 +1009,11 @@
             generateSessionNavigatorStyles() {
                 return `
             .session-navigator {
-                background-color: white;
+                background-color: #1f2937;
                 border-radius: 0.5rem;
                 padding: 1rem;
                 margin-top: 1rem;
-                border: 1px solid #e5e7eb;
+                border: 1px solid #374151;
             }
 
             .session-controls {
@@ -1013,7 +1027,7 @@
                 text-align: center;
                 flex: 1;
                 font-size: 0.875rem;
-                color: #6b7280;
+                color: #9ca3af;
             }
 
             .session-button {
@@ -1734,12 +1748,12 @@
                 ${this.styleManager.generateTailwindStyles()}
                 ${this.styleManager.getFileBrowserStyles()}
             </style>
-            <div class="bg-white rounded-xl shadow-md p-4 flex-1 hidden" id="projectStructure">
-                <h2 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+            <div class="bg-gray-800 rounded-xl shadow-md p-4 flex-1 hidden" id="projectStructure">
+                <h2 class="text-lg font-semibold text-gray-100 mb-3 flex items-center">
                     <span class="text-purple-500 mr-2">📊</span>
                     <span id="projectStructureTitle">${this.languageManager.get('projectStructure')}</span>
                 </h2>
-                <div id="fileTree" class="bg-gray-50 rounded-lg p-3 claude-file-tree">
+                <div id="fileTree" class="bg-gray-900 rounded-lg p-3 claude-file-tree">
                     <!-- File tree will be dynamically generated -->
                 </div>
             </div>
@@ -1766,7 +1780,7 @@
                 fileTree.innerHTML = '';
 
                 if (!this.projectData || !this.projectData.projects) {
-                    fileTree.innerHTML = `<div class="text-center text-gray-500 py-4">${this.languageManager.get('noProjectData')}</div>`;
+                    fileTree.innerHTML = `<div class="text-center text-gray-400 py-4">${this.languageManager.get('noProjectData')}</div>`;
                     return;
                 }
 
@@ -1774,7 +1788,7 @@
                 const directoryHandle = this.dataManager.getDirectoryHandle();
                 if (directoryHandle) {
                     const projectHeader = document.createElement('div');
-                    projectHeader.className = 'text-sm font-medium text-gray-700 mb-2 flex items-center';
+                    projectHeader.className = 'text-sm font-medium text-gray-200 mb-2 flex items-center';
                     projectHeader.innerHTML = `<span class="text-yellow-500 mr-2">📁</span> ${directoryHandle.name}`;
                     fileTree.appendChild(projectHeader);
                 }
@@ -1812,7 +1826,7 @@
                 icon.textContent = '📁';
 
                 const name = document.createElement('span');
-                name.className = 'text-gray-700 text-sm';
+                name.className = 'text-gray-200 text-sm';
                 name.textContent = project.name || this.languageManager.get('unnamedProject');
 
                 projectHeader.appendChild(toggle);
@@ -1849,7 +1863,7 @@
 
             createFileElement(file) {
                 const element = document.createElement('div');
-                element.className = 'claude-file-item flex flex-col text-gray-600 py-2 px-2 rounded cursor-pointer ml-4 text-sm border-0 hover:bg-gray-50';
+                element.className = 'claude-file-item flex flex-col text-gray-100 py-2 px-2 rounded cursor-pointer ml-4 text-sm border-0';
 
                 // File icon and date
                 const fileHeader = document.createElement('div');
@@ -1870,7 +1884,7 @@
 
                 // File preview
                 const filePreview = document.createElement('div');
-                filePreview.className = 'claude-file-preview text-xs text-gray-500 mt-1 ml-4';
+                filePreview.className = 'claude-file-preview text-xs text-gray-300 mt-1 ml-4';
                 filePreview.textContent = this.languageManager.get('loadingPreview');
                 filePreview.setAttribute('data-file-name', file.name);
 
@@ -2058,8 +2072,8 @@
 
                 if (sessions.length === 0) {
                     previewElement.textContent = this.languageManager.get('noValidSessions');
-                    previewElement.classList.remove('text-gray-500');
-                    previewElement.classList.add('text-gray-400');
+                    previewElement.classList.remove('text-gray-400');
+                    previewElement.classList.add('text-gray-300');
                 } else {
                     // Get first user message from first session as preview
                     const firstSession = sessions[0];
@@ -2073,12 +2087,12 @@
                         }
 
                         previewElement.textContent = previewText;
-                        previewElement.classList.remove('text-gray-500');
-                        previewElement.classList.add('text-gray-600');
+                        previewElement.classList.remove('text-gray-400');
+                        previewElement.classList.add('text-gray-300');
                     } else {
                         previewElement.textContent = this.languageManager.get('noMessageContent');
-                        previewElement.classList.remove('text-gray-500');
-                        previewElement.classList.add('text-gray-400');
+                        previewElement.classList.remove('text-gray-400');
+                        previewElement.classList.add('text-gray-300');
                     }
                 }
             }
@@ -2148,8 +2162,8 @@
                 ${this.styleManager.getMessageViewerStyles()}
                 ${this.styleManager.getDiffModalStyles()}
             </style>
-            <div id="conversationDetail" class="bg-white rounded-xl shadow-md p-4 h-full hidden flex flex-col">
-                <h2 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+            <div id="conversationDetail" class="bg-gray-800 rounded-xl shadow-md p-4 h-full hidden flex flex-col">
+                <h2 class="text-lg font-semibold text-gray-100 mb-4 flex items-center">
                     <span class="text-yellow-500 mr-2">💬</span>${this.languageManager.get('conversationDetails')}
                 </h2>
                 <div id="conversationContent" class="flex-1">
@@ -2159,10 +2173,10 @@
 
             <!-- Initial state -->
             <div id="initialState"
-                class="bg-white rounded-xl shadow-md p-6 h-full flex flex-col items-center justify-center text-center">
+                class="bg-gray-800 rounded-xl shadow-md p-6 h-full flex flex-col items-center justify-center text-center">
                 <span class="text-5xl text-gray-400 mb-4">📁</span>
-                <h3 class="text-xl font-semibold text-gray-700 mb-2">${this.languageManager.get('initialStateTitle')}</h3>
-                <p class="text-gray-500 max-w-md">${this.languageManager.get('initialStateDescription')}</p>
+                <h3 class="text-xl font-semibold text-gray-200 mb-2">${this.languageManager.get('initialStateTitle')}</h3>
+                <p class="text-gray-400 max-w-md">${this.languageManager.get('initialStateDescription')}</p>
             </div>
         `;
             }
@@ -2178,7 +2192,7 @@
 
                 const content = this.shadowRoot.getElementById('conversationContent');
                 content.innerHTML = `
-            <div class="text-center text-gray-500 py-8">
+            <div class="text-center text-gray-400 py-8">
                 <div class="loading-spinner mb-4"></div>
                 <p class="text-md">${this.languageManager.get('loading')}</p>
             </div>
@@ -2201,36 +2215,36 @@
 
                 content.innerHTML = `
             <div class="mb-6">
-                <h2 class="text-xl font-bold text-gray-800 mb-2">${this.languageManager.get('projectOverview')}</h2>
-                <p class="text-gray-600">${this.languageManager.get('projectFolderLabel')}: <span class="font-medium">${directoryHandle.name}</span></p>
+                <h2 class="text-xl font-bold text-gray-100 mb-2">${this.languageManager.get('projectOverview')}</h2>
+                <p class="text-gray-100">${this.languageManager.get('projectFolderLabel')}: <span class="font-medium">${directoryHandle.name}</span></p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                <div class="bg-white border border-gray-200 rounded-lg p-4">
+                <div class="bg-gray-700 border border-gray-600 rounded-lg p-4">
                     <div class="flex items-center">
-                        <div class="bg-blue-100 p-3 rounded-full mr-4">
-                            <span class="text-blue-500">📁</span>
+                        <div class="bg-blue-900 p-3 rounded-full mr-4">
+                            <span class="text-blue-400">📁</span>
                         </div>
                         <div>
-                            <p class="text-sm text-gray-500">${this.languageManager.get('projectCount')}</p>
-                            <p class="text-2xl font-bold text-gray-800">${Object.keys(projectData.projects).length}</p>
+                            <p class="text-sm text-gray-200">${this.languageManager.get('projectCount')}</p>
+                            <p class="text-2xl font-bold text-gray-100">${Object.keys(projectData.projects).length}</p>
                         </div>
                     </div>
                 </div>
-                <div class="bg-white border border-gray-200 rounded-lg p-4">
+                <div class="bg-gray-700 border border-gray-600 rounded-lg p-4">
                     <div class="flex items-center">
-                        <div class="bg-green-100 p-3 rounded-full mr-4">
-                            <span class="text-green-500">📄</span>
+                        <div class="bg-green-900 p-3 rounded-full mr-4">
+                            <span class="text-green-400">📄</span>
                         </div>
                         <div>
-                            <p class="text-sm text-gray-500">${this.languageManager.get('jsonlFiles')}</p>
-                            <p class="text-2xl font-bold text-gray-800">${fileCount}</p>
+                            <p class="text-sm text-gray-200">${this.languageManager.get('jsonlFiles')}</p>
+                            <p class="text-2xl font-bold text-gray-100">${fileCount}</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <h3 class="text-lg font-semibold text-blue-800 mb-2">${this.languageManager.get('nextStep')}</h3>
-                <p class="text-blue-700">${this.languageManager.get('nextStepDescription')}</p>
+            <div class="bg-blue-900 border border-blue-700 rounded-lg p-4">
+                <h3 class="text-lg font-semibold text-blue-200 mb-2">${this.languageManager.get('nextStep')}</h3>
+                <p class="text-blue-300">${this.languageManager.get('nextStepDescription')}</p>
             </div>
         `;
             }
@@ -2241,7 +2255,7 @@
 
                 const content = this.shadowRoot.getElementById('conversationContent');
                 content.innerHTML = `
-            <div class="text-center text-gray-500 py-8">
+            <div class="text-center text-gray-400 py-8">
                 <span class="text-3xl mb-3">🚫</span>
                 <p class="text-md">${this.languageManager.get('noSessionsFound')}</p>
                 <p class="text-xs mt-1">${this.languageManager.get('noSessionsDescription')}</p>
@@ -2258,7 +2272,7 @@
 
                 if (!session) {
                     content.innerHTML = `
-                <div class="text-center text-gray-500 py-8">
+                <div class="text-center text-gray-400 py-8">
                     <span class="text-3xl mb-3">⚠️</span>
                     <p class="text-md">${this.languageManager.get('invalidSession')}</p>
                 </div>
@@ -2268,9 +2282,9 @@
 
                 // Add session header
                 const header = document.createElement('div');
-                header.className = 'mb-4 pb-3 border-b border-gray-200';
+                header.className = 'mb-4 pb-3 border-b border-gray-600';
                 header.innerHTML = `
-            <div class="grid grid-cols-2 gap-2 text-xs text-gray-600 bg-white border border-gray-200 rounded-lg p-3">
+            <div class="grid grid-cols-2 gap-2 text-xs text-gray-100 bg-gray-700 border border-gray-600 rounded-lg p-3">
                 <div class="flex items-center">
                     <span class="mr-1">#</span>
                     <span class="truncate">${session.id || this.languageManager.get('unknownSession')}</span>
@@ -2297,7 +2311,7 @@
 
                 if (!session.messages || session.messages.length === 0) {
                     messagesContainer.innerHTML = `
-                <div class="text-center text-gray-500 py-4">
+                <div class="text-center text-gray-400 py-4">
                     <span class="text-2xl mb-2">🚫</span>
                     <p class="text-sm">${this.languageManager.get('noMessagesInSession')}</p>
                 </div>
@@ -2326,11 +2340,11 @@
                 <div class="flex items-center mb-1">
                     <span class="text-blue-500 mr-2 text-sm">👤</span>
                     <span class="font-medium text-sm">${this.languageManager.get('user')}</span>
-                    <span class="text-xs text-gray-500 ml-auto">${message.timestamp ? new Date(message.timestamp).toLocaleTimeString(this.languageManager.getCurrentLanguage()) : this.languageManager.get('unknownSession')}</span>
+                    <span class="text-xs text-gray-300 ml-auto">${message.timestamp ? new Date(message.timestamp).toLocaleTimeString(this.languageManager.getCurrentLanguage()) : this.languageManager.get('unknownSession')}</span>
                 </div>
-                <div class="text-gray-700 whitespace-pre-wrap text-sm">${this.convertTodoToHTML(message.content) || this.languageManager.get('noMessageContent')}</div>
+                <div class="text-gray-200 whitespace-pre-wrap text-sm">${this.convertTodoToHTML(message.content) || this.languageManager.get('noMessageContent')}</div>
                 ${message.rawData && message.rawData.thinkingMetadata ? `
-                    <div class="mt-1 text-xs text-gray-500">
+                    <div class="mt-1 text-xs text-gray-300">
                         <span class="mr-1">🧠</span>${this.languageManager.get('thinkingMode')}: ${message.rawData.thinkingMetadata.level || this.languageManager.get('unknownSession')}
                     </div>
                 ` : ''}
@@ -2341,9 +2355,9 @@
                 <div class="flex items-center mb-1">
                     <span class="text-yellow-500 mr-2 text-sm">📝</span>
                     <span class="font-medium text-sm">${this.languageManager.get('summary')}</span>
-                    <span class="text-xs text-gray-500 ml-auto">${message.timestamp ? new Date(message.timestamp).toLocaleTimeString(this.languageManager.getCurrentLanguage()) : this.languageManager.get('unknownSession')}</span>
+                    <span class="text-xs text-gray-300 ml-auto">${message.timestamp ? new Date(message.timestamp).toLocaleTimeString(this.languageManager.getCurrentLanguage()) : this.languageManager.get('unknownSession')}</span>
                 </div>
-                <div class="text-gray-700 whitespace-pre-wrap text-sm">${this.convertTodoToHTML(message.content) || this.languageManager.get('noMessageContent')}</div>
+                <div class="text-gray-200 whitespace-pre-wrap text-sm">${this.convertTodoToHTML(message.content) || this.languageManager.get('noMessageContent')}</div>
             `;
                 } else if (message.role === 'system') {
                     messageElement.className = 'message-system p-3 rounded-lg';
@@ -2351,11 +2365,11 @@
                 <div class="flex items-center mb-1">
                     <span class="text-blue-500 mr-2 text-sm">⚙️</span>
                     <span class="font-medium text-sm">${this.languageManager.get('system')}</span>
-                    <span class="text-xs text-gray-500 ml-auto">${message.timestamp ? new Date(message.timestamp).toLocaleTimeString(this.languageManager.getCurrentLanguage()) : this.languageManager.get('unknownSession')}</span>
+                    <span class="text-xs text-gray-300 ml-auto">${message.timestamp ? new Date(message.timestamp).toLocaleTimeString(this.languageManager.getCurrentLanguage()) : this.languageManager.get('unknownSession')}</span>
                 </div>
-                <div class="text-gray-700 whitespace-pre-wrap text-sm">${this.convertTodoToHTML(message.content) || this.languageManager.get('noMessageContent')}</div>
+                <div class="text-gray-200 whitespace-pre-wrap text-sm">${this.convertTodoToHTML(message.content) || this.languageManager.get('noMessageContent')}</div>
                 ${message.rawData && message.rawData.subtype ? `
-                    <div class="mt-1 text-xs text-gray-500">
+                    <div class="mt-1 text-xs text-gray-300">
                         <span class="mr-1">🏷️</span>${this.languageManager.get('subtype')}: ${message.rawData.subtype}
                     </div>
                 ` : ''}
@@ -2388,7 +2402,7 @@
                     // Handle simple text content
                     let simpleContent = '';
                     if (!hasComplexContent && message.content) {
-                        simpleContent = `<div class="text-gray-700 whitespace-pre-wrap text-sm">${this.convertTodoToHTML(message.content) || this.languageManager.get('noMessageContent')}</div>`;
+                        simpleContent = `<div class="text-gray-200 whitespace-pre-wrap text-sm">${this.convertTodoToHTML(message.content) || this.languageManager.get('noMessageContent')}</div>`;
                     }
 
                     messageElement.innerHTML = `
@@ -2396,12 +2410,12 @@
                     <span class="text-green-500 mr-2 text-sm">🤖</span>
                     <span class="font-medium text-sm">${this.languageManager.get('assistant')}</span>
                     ${modelInfo}
-                    <span class="text-xs text-gray-500 ml-auto">${message.timestamp ? new Date(message.timestamp).toLocaleTimeString(this.languageManager.getCurrentLanguage()) : this.languageManager.get('unknownSession')}</span>
+                    <span class="text-xs text-gray-300 ml-auto">${message.timestamp ? new Date(message.timestamp).toLocaleTimeString(this.languageManager.getCurrentLanguage()) : this.languageManager.get('unknownSession')}</span>
                 </div>
                 ${contentElements}
                 ${simpleContent}
                 ${message.rawData && message.rawData.message && message.rawData.message.usage ? `
-                    <div class="mt-1 text-xs text-gray-500 flex space-x-3">
+                    <div class="mt-1 text-xs text-gray-300 flex space-x-3">
                         <span><span class="mr-1">📥</span>${this.languageManager.get('inputTokens')}: ${message.rawData.message.usage.input_tokens || 0}</span>
                         <span><span class="mr-1">📤</span>${this.languageManager.get('outputTokens')}: ${message.rawData.message.usage.output_tokens || 0}</span>
                     </div>
@@ -2414,7 +2428,7 @@
                 <div class="flex items-center mb-1">
                     <span class="text-yellow-500 mr-2 text-sm">❓</span>
                     <span class="font-medium text-sm">${message.type || this.languageManager.get('unknownType')}</span>
-                    <span class="text-xs text-gray-500 ml-auto">${message.timestamp ? new Date(message.timestamp).toLocaleTimeString(this.languageManager.getCurrentLanguage()) : this.languageManager.get('unknownSession')}</span>
+                    <span class="text-xs text-gray-300 ml-auto">${message.timestamp ? new Date(message.timestamp).toLocaleTimeString(this.languageManager.getCurrentLanguage()) : this.languageManager.get('unknownSession')}</span>
                 </div>
                 <div class="json-code">
                     <pre>${this.formatJSON(message.rawData || {})}</pre>
@@ -2433,8 +2447,8 @@
                         const showLabel = false; // Simplified - no label for cleaner display 
                         return `
                     <div class="text-content">
-                        ${showLabel ? '<div class="text-xs text-gray-500 mb-1">' + this.languageManager.get('textContent') + '</div>' : ''}
-                        <div class="text-gray-700 whitespace-pre-wrap text-sm">${textContent}</div>
+                        ${showLabel ? '<div class="text-xs text-gray-300 mb-1">' + this.languageManager.get('textContent') + '</div>' : ''}
+                        <div class="text-gray-200 whitespace-pre-wrap text-sm">${textContent}</div>
                     </div>
                 `;
 
@@ -2443,7 +2457,7 @@
                         return `
                     <div class="summary-content bg-yellow-50 p-3 rounded border border-yellow-200">
                         <div class="text-xs text-yellow-600 mb-1">${this.languageManager.get('summary')}</div>
-                        <div class="text-gray-700 whitespace-pre-wrap">${summaryContent}</div>
+                        <div class="text-gray-200 whitespace-pre-wrap">${summaryContent}</div>
                     </div>
                 `;
 
@@ -2452,7 +2466,7 @@
                         return `
                     <div class="system-content bg-blue-50 p-3 rounded border border-blue-200">
                         <div class="text-xs text-blue-600 mb-1">${this.languageManager.get('system')}消息</div>
-                        <div class="text-gray-700 whitespace-pre-wrap">${systemContent}</div>
+                        <div class="text-gray-200 whitespace-pre-wrap">${systemContent}</div>
                     </div>
                 `;
 
@@ -2465,7 +2479,7 @@
                     default:
                         return `
                     <div class="unknown-content">
-                        <div class="text-xs text-gray-500 mb-1">${item.type || this.languageManager.get('unknownType')}</div>
+                        <div class="text-xs text-gray-300 mb-1">${item.type || this.languageManager.get('unknownType')}</div>
                         <div class="json-code">
                             <pre>${this.formatJSON(item)}</pre>
                         </div>
@@ -2492,7 +2506,7 @@
                 else if (item.name === 'TodoWrite' && item.input && item.input.todos) {
                     const todoHTML = this.renderTodoList(item.input.todos);
                     toolDisplay = `
-                <div class="todo-container p-3 bg-white rounded border border-gray-200">
+                <div class="todo-container p-3 bg-gray-800 rounded border border-gray-600">
                     ${todoHTML}
                 </div>
             `;
@@ -2575,7 +2589,7 @@
                     resultDisplay = `
                 <div class="bg-green-50 p-3 rounded border border-green-200">
                     <div class="text-xs text-green-600 mb-1">${this.languageManager.get('toolResult')}</div>
-                    <div class="text-gray-700 whitespace-pre-wrap">${displayContent}</div>
+                    <div class="text-gray-200 whitespace-pre-wrap">${displayContent}</div>
                 </div>
             `;
                 } else {
@@ -2788,7 +2802,7 @@
 
                             return `<div class="flex items-start mb-1">
                         <input type="checkbox" class="mt-1 mr-2" disabled>
-                        <span class="text-gray-700">${trimmedContent}</span>
+                        <span class="text-gray-200">${trimmedContent}</span>
                     </div>`;
                         });
 
@@ -2806,7 +2820,7 @@
 
             renderTodoList(todos) {
                 if (!todos || !Array.isArray(todos) || todos.length === 0) {
-                    return '<div class="text-gray-500 text-sm">无待办事项</div>';
+                    return '<div class="text-gray-400 text-sm">无待办事项</div>';
                 }
 
                 let todoHTML = '<div class="todo-list space-y-2">';
@@ -2817,7 +2831,7 @@
                     const isCompleted = status === 'completed';
                     const isInProgress = status === 'in_progress';
 
-                    let statusClass = 'text-gray-700';
+                    let statusClass = 'text-gray-200';
                     let statusIcon = '';
 
                     if (isCompleted) {
@@ -2831,12 +2845,12 @@
                     }
 
                     todoHTML += `
-                <div class="flex items-start p-2 bg-white rounded border border-gray-200">
+                <div class="flex items-start p-2 bg-gray-800 rounded border border-gray-600">
                     <div class="flex items-center flex-1">
                         ${statusIcon}
                         <span class="${statusClass}">${todoContent}</span>
                     </div>
-                    <span class="text-xs text-gray-500 ml-2 px-2 py-1 bg-gray-100 rounded">${status}</span>
+                    <span class="text-xs text-gray-200 ml-2 px-2 py-1 bg-gray-700 rounded">${status}</span>
                 </div>
             `;
                 });
